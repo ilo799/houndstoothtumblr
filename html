@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <!--Houndstooth Tumblr Theme by Isabelle Orrico; Last Modified 4/29/14-->
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <style type="text/css">{CustomCSS}</style>
+    <link href='http://fonts.googleapis.com/css?family=Share:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<!--header-->
+<div id="header">
+<img id=left_img src="http://i59.tinypic.com/k4uvs0.png" border="0" height="250px">  
+<div id="title_bar"> <h1>{Title}</h1>
+<h2>a fun tumblr theme</h2>
+<div id="social_media_links">
+<a href="#"> <img class=social_media src="http://static.tumblr.com/0qsz98d/sPfn4t1hz/fb_icon.png" border="0" height="40px"></a>
+<a href="#"> <img class=social_media  src="http://static.tumblr.com/0qsz98d/QNhn4t1i0/flickr_icon.png" border="0" height="40px"></a>
+<a href="#"> <img class=social_media  src="http://static.tumblr.com/0qsz98d/VCjn4t1i0/instagram_icon.png" border="0" height="40px"></a>
+<a href="#"> <img class=social_media  src="http://static.tumblr.com/0qsz98d/ZN5n4t1i1/pintrest_icon.png" border="0" height="40px"></a>
+<a href="#"> <img class=social_media  src="http://static.tumblr.com/0qsz98d/3Hyn4t1i2/youtube_icon.png" border="0" height="40px"></a>
+<a href="#"> <img class=social_media  src="http://static.tumblr.com/0qsz98d/pd2n4t1i2/twitter_icon.png" border="0" height="40px"></a>
+
+    
+    
+</div>
+     
+    
+</div>
+ <img id=right_img src="http://i62.tinypic.com/314v8zk.png" border="0" height="250px" >
+
+
+</div>
+  
+<!--Content-->  
+<div id="content">
+  <div class=post>
+    {block:Posts}
+        {block:Date}
+        {block:NewDayDate}
+        <div class=date>{ShortMonth} {DayOfMonthWithZero}</div> 
+        {/block:NewDayDate}
+        {/block:Date}
+    {block:Text}
+        <li class="post_text">
+                    {block:Title}
+                    <h3><a href="{Permalink}">{Title}</a></h3>
+                    {/block:Title}
+                    <div class=text_body>{Body}</div>
+        </li>
+    {/block:Text}
+                        
+    {block:Photo}
+            <li class="post_photo">
+            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+            </li>
+    {/block:Photo}
+                
+    {block:Panorama}
+    <li class="post_panorama">
+    {LinkOpenTag}
+    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+    {LinkCloseTag}{block:Caption}
+    <div class="caption">{Caption}</div>
+    {/block:Caption}
+    </li>
+    {/block:Panorama}
+                
+                
+    {block:Quote}
+    <li class="post_quote">
+    "{Quote}"
+    
+    {block:Source}
+    <div class="source">-{Source}</div>
+    {/block:Source}</li>
+    {/block:Quote}
+                
+                
+    {block:Chat}
+    <li class="post_chat">
+    {block:Title}
+    <h3><a href="{Permalink}">{Title}</a></h3>
+    {/block:Title}
+
+    <ul class="chat">
+    {block:Lines}
+    <li class="{Alt} user_{UserNumber}">
+    {block:Label}
+    <span class="label">{Label}</span>
+    {/block:Label}{Line}
+    </li>
+    {/block:Lines}
+     </ul>
+    </li>
+    {/block:Chat}
+                
+    {block:Video}
+    <li class="post_video">
+    {Video-500}{block:Caption}
+    <div class="caption">{Caption}</div>
+    {/block:Caption}
+    </li>
+    {/block:Video}
+                
+    {block:Audio}
+    <li class="post_audio">
+    {block:AudioEmbed}
+    {AudioEmbed}
+    {/block:AudioEmbed}
+    {block:AudioPlayer} 
+    <div class="audio">{AudioPlayer}</div>
+    {/block:AudioPlayer}
+                    
+    {block:Caption}
+    <div class="caption">{Caption}</div>
+    {/block:Caption}</li>
+    {/block:Audio}
+
+{/block:Posts}
+</div>
+</div>
+
+<!--sidebar-->
+<div id="sticky_sidebar">
+<img id="my_photo" src="{PortraitURL-128}">
+
+<div id=about> About 
+<p>{Description}</p>
+</div>
+
+{block:Following}
+<div id=following>Following</br>
+{block:Followed}
+
+<a class="tooltips" href={FollowedURL}><img id="followed_photo" src="{FollowedPortraitURL-64}">
+<span>{FollowedTitle}</span></a>
+
+{/block:Followed}
+</div>
+{/block:Following}
+
+</div>
+
+<!--footer-->  
+<div id="footer">
+    
+    
+{block:Pagination}
+    <a id="prev" href="{PreviousPage}">&#171; </a>
+ {/block:Pagination}
+    <span id="pages"> Page {CurrentPage} of {TotalPages} |</span> 
+    <span id=archive><a href="/archive"> Archive </a></span>|
+    <span id=Rss><a href={RSS}> RSS </a></span>
+    
+{block:Pagination}
+       <a id="next" href="{NextPage}">&#187;</a>
+{/block:Pagination}
+    
+  
+<div id="about_theme">Houndstooth </br> Theme by <a>Isabelle Orrico</a>
+</div> </div>
+
+    
+</body>
+</html>
